@@ -14,9 +14,9 @@ This project primarily uses:
 
 1. **Follow Modern C++**: Reference the [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) for new code
 2. **Consistency First**: When modifying existing code, match the existing style
-3. **Smart Pointers**: Use [Windows Implementation Library (WIL)](https://github.com/Microsoft/wil) for Win32/NT/COM APIs
+3. **Smart Pointers**: Use [Windows Implementation Library (WIL)](https://github.com/microsoft/wil) for Win32/NT/COM APIs
 4. **Result Handling**: 
-   - Prefer HRESULT or exceptions over NTSTATUS
+   - For new code, prefer HRESULT or exceptions over NTSTATUS (legacy code may still use NTSTATUS)
    - Functions returning status codes should be marked `noexcept` and have `[[nodiscard]]` attribute
    - Avoid returning status codes for functions that always succeed
 
